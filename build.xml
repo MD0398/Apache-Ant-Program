@@ -4,17 +4,18 @@
     <property name="build" value="build"/>
     <property name="lib"   value="node_modules"/>
 
-    <target name="all" depends="clean, compile" description="Builds the whole project">
+    <target name="all" depends="clean, run" description="Builds the whole project">
         <echo>Doing all</echo>
     </target>
 
     <target name="clean" description="Removes previous build">
+    <echo>clean ${ant.project.name} </echo>
         <delete verbose="true">
             <fileset dir="${build}"/>
         </delete>
     </target>
 
-    <target name="compile" depends="clean" description="compile whole project">
+    <target name="run" depends="clean" description="run whole project">
         <echo>run ${ant.project.name} </echo>
         <script language="javascript" src="main.js">  
           </script> 
