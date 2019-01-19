@@ -15,7 +15,7 @@
     </target>
 
     <target name="compile" depends="clean" description="compile whole project">
-        <echo>compile ${ant.project.name} </echo>
+        <echo>run ${ant.project.name} </echo>
         <script language="javascript" src="main.js">  
           </script> 
         
