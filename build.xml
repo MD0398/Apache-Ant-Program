@@ -1,5 +1,23 @@
-<project name="first" default="main" basedir=".">
-    <target name="main">
-        <script language="javascript" src="main.js"> </script> 
+<?xml version="1.0"?>
+<project name="ant" default="all" basedir=".">
+    <property name="src"   value="src"/>
+    <property name="build" value="build"/>
+    <property name="lib"   value="node_modules"/>
+
+    <target name="all" depends="clean, compile" description="Builds the whole project">
+        <echo>Doing all</echo>
+    </target>
+
+    <target name="clean" description="Removes previous build">
+        <delete verbose="true">
+            <fileset dir="${build}"/>
+        </delete>
+    </target>
+
+    <target name="compile" depends="clean" description="compile whole project">
+        <echo>compile ${ant.project.name} </echo>
+        <script language="javascript" src="main.js">  
+          </script> 
+        
     </target>
 </project>
